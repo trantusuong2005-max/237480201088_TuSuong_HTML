@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Bài 9B</title>
+</head>
+<body>
+<script language="JavaScript">
+    var DS = [];
+    var soLuong, i;
+
+    soLuong = prompt("Nhập số lượng thiết bị văn phòng:");
+
+    // Nhập danh sách thiết bị
+    for (i = 0; i < soLuong; i++) {
+        DS[i] = prompt("Nhập tên thiết bị thứ " + (i+1) + ":");
+    }
+
+    // In bảng
+    document.write("<h2>Danh sách thiết bị có tên COMPUTER</h2>");
+    document.write("<table border='1' cellpadding='5'>");
+    document.write("<tr><th>STT</th><th>Tên thiết bị</th></tr>");
+
+    var dem = 1;
+    for (i = 0; i < DS.length; i++) {
+        if (DS[i] == "Computer") {
+            document.write("<tr>");
+            document.write("<td>" + dem + "</td>");
+            document.write("<td>" + DS[i] + "</td>");
+            document.write("</tr>");
+            dem++;
+        }
+    }
+
+    document.write("</table>");
+</script>
+</body>
+</html>
