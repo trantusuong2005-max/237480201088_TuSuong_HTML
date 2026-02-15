@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thiệp Chúc Mừng Năm Mới</title>
+
+<style>
+body{
+    margin:0;
+    min-height:100vh;
+    background: radial-gradient(circle, #fff1d6, #c40000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Times New Roman";
+}
+
+.card{
+    background:#fff8ea;
+    width:520px;
+    padding:25px;
+    border-radius:22px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
+    text-align:center;
+}
+
+h1{
+    color:#c40000;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#555;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.envelopes{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.envelope{
+    width:110px;
+    height:140px;
+    margin:auto;
+    background:linear-gradient(#c40000, #ff4d4d);
+    border-radius:10px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(0,0,0,0.3);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.envelope:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 12px 25px rgba(0,0,0,0.45);
+}
+
+.envelope::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:55px solid transparent;
+    border-right:55px solid transparent;
+    border-bottom:45px solid #ff9a9a;
+}
+
+.envelope span{
+    position:absolute;
+    bottom:12px;
+    width:100%;
+    text-align:center;
+    color:gold;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.message{
+    display:none;
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    animation:fadeIn 0.8s ease;
+}
+
+.message h2{
+    color:#c40000;
+}
+
+.message p{
+    font-size:17px;
+    line-height:1.7;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+<script>
+const loiChuc = [
+ "Năm mới Bính Ngọ ghé nhà, chúc bạn một năm hanh thông, thuận hòa, học hành tiến bộ, công việc nở hoa, tinh thần luôn vững, đường đời không loạng choạng, bước tới đâu cũng gặp may mắn tới đó.",
+ "Xuân về mang theo khởi đầu mới, chúc bạn sức khỏe dồi dào, tinh thần phấn chấn, học tập suôn sẻ, làm gì cũng trơn tru, tiền bạc đủ tiêu, niềm vui đủ đầy, cả năm nhẹ đầu – nhẹ dạ – nhẹ lo.",
+ "Bước sang năm Bính Ngọ, chúc bạn đi đúng hướng – gặp đúng người – làm đúng việc, mọi dự định đều vào guồng, mọi cố gắng đều có hồi đáp, chuyện lớn hóa nhỏ, chuyện nhỏ hóa không.",
+ "Năm mới đến, mong bạn an yên trong lòng, vững vàng ngoài đời, học hành – sự nghiệp cùng thăng, khó khăn lùi bước, thuận lợi theo chân, một năm trôi qua không phí công, không phí sức.",
+ "Xuân này chúc bạn vạn sự thuận dòng, kế hoạch thông suốt, kết quả như mong, mỗi ngày thức dậy có động lực để cố gắng, tối về có bình yên để nghỉ ngơi.",
+ "Bính Ngọ sang trang, chúc bạn tâm sáng – trí bền – lòng không vội, làm việc có đầu có cuối, học tập có trước có sau, tiền bạc tuy không ào ào nhưng lúc nào cũng đủ xài.",
+ "Năm mới, chúc bạn ít muộn phiền – nhiều niềm vui, ít áp lực – nhiều động lực, việc học việc làm đều tiến tới, một năm đi qua nhìn lại chỉ thấy tự hào.",
+ "Xuân về không cần quá rộn ràng, chỉ mong bạn bình an từng chặng, làm gì cũng có người giúp, đi đâu cũng có người thương, cả năm nhẹ nhàng mà vẫn thành công.",
+ "Bính Ngọ khởi đầu, chúc bạn thuận từ trong nghĩ – thông ra ngoài đời, làm ăn có lối, học tập có đường, một năm mới tròn đầy từ sức khỏe đến ước mơ."
+];
+
+function moPhongBao(i){
+    document.getElementById("noidung").innerText = loiChuc[i];
+    document.getElementById("message").style.display="block";
+}
+</script>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🎊 Chúc Mừng Năm Mới 🎊</h1>
+    <div class="subtitle">Hãy chọn một trong 9 phong bao lì xì để nhận lời chúc đầu năm</div>
+
+    <div class="envelopes">
+        <div class="envelope" onclick="moPhongBao(0)"><span>1</span></div>
+        <div class="envelope" onclick="moPhongBao(1)"><span>2</span></div>
+        <div class="envelope" onclick="moPhongBao(2)"><span>3</span></div>
+        <div class="envelope" onclick="moPhongBao(3)"><span>4</span></div>
+        <div class="envelope" onclick="moPhongBao(4)"><span>5</span></div>
+        <div class="envelope" onclick="moPhongBao(5)"><span>6</span></div>
+        <div class="envelope" onclick="moPhongBao(6)"><span>7</span></div>
+        <div class="envelope" onclick="moPhongBao(7)"><span>8</span></div>
+        <div class="envelope" onclick="moPhongBao(8)"><span>9</span></div>
+    </div>
+
+    <div class="message" id="message">
+        <h2>🌸 Lời chúc dành cho bạn 🌸</h2>
+        <p id="noidung"></p>
+    </div>
+</div>
+
+</body>
+</html>
