@@ -1,0 +1,29 @@
+Câu 3:
+CREATE TABLE IF NOT EXISTS TONKHO (
+    mahang VARCHAR(4) PRIMARY KEY,
+    tenhang VARCHAR(40),
+    mansx VARCHAR(2),
+    namsx INT,
+    gia INT,
+    soluong INT
+);
+
+
+Câu 4:
+INSERT INTO TONKHO (mahang, tenhang, mansx, namsx, gia, soluong) VALUES 
+('DE01', 'Dell Vostro', 'DE', 2015, 650, 20),
+('DE02', 'Dell Inspiron', 'DE', 2015, 550, 30);
+
+
+Câu 5:
+UPDATE KHACHHANG 
+SET dienthoai = '0912131415' 
+WHERE makh = 'K007';
+
+Câu 6:
+DELETE FROM KHACHHANG 
+WHERE makh = 'K010';
+
+Câu 7:
+SELECT * FROM HANGHOA 
+WHERE mansx = 'DE';
