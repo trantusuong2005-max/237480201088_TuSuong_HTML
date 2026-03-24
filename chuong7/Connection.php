@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "quanlybanhang");
+$conn = mysqli_connect("localhost", "root", "", "quanlybanhang1");
 
 if (!$conn) {
     die("Kết nối thất bại: " . mysqli_connect_error());

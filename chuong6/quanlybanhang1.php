@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root"; 
-$pass = "";     
-$dbname = "quanlybanhang1";
+$host = "localhost";  // Địa chỉ server (máy m đang chạy XAMPP)
+$user = "root";   // Tên đăng nhập mặc định của MySQL
+$pass = "";     // Mật khẩu mặc định (thường để trống)
+$dbname = "quanlybanhang1";   // Tên database
 
 $conn = mysqli_connect($host, $user, $pass); // Kết nối server trước
 if (!$conn) {

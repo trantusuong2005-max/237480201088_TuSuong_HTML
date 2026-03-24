@@ -10,7 +10,7 @@ $gia = $_POST['gia'];
 $sql = "INSERT INTO hanghoa VALUES ('$mahang','$tenhang','$mansx',$namsx,$gia)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Thêm thành công!";
+    echo "Thêm hàng hóa thành công!";
 } else {
     echo "Lỗi: Thêm thất bại! " . mysqli_error($conn);
 }
