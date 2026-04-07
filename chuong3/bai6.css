@@ -1,0 +1,22 @@
+body {
+    background-color: lightyellow;
+}
+
+h1 {
+    color: red;
+}
+
+.doan {
+    font-family: Verdana;
+    color: green;
+}
+
+ol {
+    font-family: Verdana;
+    color: purple;
+}
+
+ul {
+    font-family: "Times New Roman";
+    color: blue;
+}

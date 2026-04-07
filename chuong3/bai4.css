@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "Times New Roman";
+    font-size: 14px;
+    font-weight: bold;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: lightgray;
+}
+
+.sang {
+    background-color: #e0f7fa;
+}
+
+.chieu {
+    background-color: #ffe0b2;
+}

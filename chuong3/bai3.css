@@ -1,0 +1,16 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    color: black;
+}
+
+.khung {
+    background-color: pink;
+    padding: 20px;
+    width: 600px;
+    margin: auto;
+}

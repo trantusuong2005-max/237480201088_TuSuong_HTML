@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Mõ chùa</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#efe6d3;
+  flex-direction:column;
+  font-family:Arial;
+}
+
+/* MÕ */
+
+.mo{
+  width:220px;
+  height:150px;
+  background:radial-gradient(circle at 30% 30%, #8b4a24, #5a2f17);
+  border-radius:120px;
+  position:relative;
+  box-shadow:
+    inset 0 20px 30px rgba(255,255,255,0.2),
+    inset 0 -25px 40px rgba(0,0,0,0.5),
+    0 20px 30px rgba(0,0,0,0.3);
+}
+
+/* LỖ MÕ */
+.mo::after{
+  content:"";
+  position:absolute;
+  width:80px;
+  height:35px;
+  background:#2b1409;
+  border-radius:50px;
+  top:60px;
+  left:70px;
+}
+
+/* DÙI */
+.stick{
+  width:16px;
+  height:140px;
+  background:linear-gradient(#f4d19b,#c38b42);
+  position:absolute;
+  left:260px;
+  top:0;
+  border-radius:10px;
+  transform-origin:bottom center;
+  transition:0.12s;
+}
+
+/* GÕ */
+.hit{
+  transform:rotate(-65deg);
+}
+
+.text{
+  margin-top:40px;
+  font-size:18px;
+  color:#5c3b24;
+}
+
+</style>
+</head>
+
+<body>
+
+<div style="position:relative">
+  <div class="mo" onclick="goMo()"></div>
+  <div class="stick" id="stick"></div>
+</div>
+
+<div class="text">Chạm vào mõ để gõ 📿</div>
+
+<script>
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function goMo(){
+
+  const stick = document.getElementById("stick");
+  stick.classList.add("hit");
+
+  setTimeout(()=>{
+    stick.classList.remove("hit");
+  },120);
+
+  /* ===== ÂM THANH GIỐNG MÕ ===== */
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  const convolver = audioCtx.createConvolver();
+
+  // tạo reverb (vang)
+  const length = audioCtx.sampleRate * 2;
+  const impulse = audioCtx.createBuffer(2, length, audioCtx.sampleRate);
+
+  for(let i=0;i<2;i++){
+    const channel = impulse.getChannelData(i);
+    for(let j=0;j<length;j++){
+      channel[j] = (Math.random()*2-1) * Math.pow(1-j/length,2);
+    }
+  }
+
+  convolver.buffer = impulse;
+
+  osc.type = "sine";
+
+  // âm trầm đặc trưng mõ
+  osc.frequency.setValueAtTime(280, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime+0.3);
+
+  gain.gain.setValueAtTime(1, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+1.5);
+
+  osc.connect(gain);
+  gain.connect(convolver);
+  convolver.connect(audioCtx.destination);
+
+  osc.start();
+  osc.stop(audioCtx.currentTime+1.5);
+}
+
+</script>
+
+</body>
+</html>

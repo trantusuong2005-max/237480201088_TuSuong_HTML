@@ -1,0 +1,31 @@
+body {
+    font-size: 13pt;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.nam1 {
+    font-family: Verdana;
+    color: black;
+}
+
+.nam2 {
+    font-family: Tahoma;
+    color: black;
+}
+
+.nam3 {
+    font-family: "Times New Roman";
+    color: black;
+}
+
+.totnghiep {
+    font-family: Verdana;
+    color: red;
+}
