@@ -1,0 +1,53 @@
+body{
+font-family:Tahoma;
+}
+
+.khung{
+width:900px;
+margin:auto;
+border:1px solid black;
+display:flex;
+}
+
+.menu{
+width:200px;
+background:#003366;
+}
+
+.menu ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.menu li{
+border-bottom:1px solid white;
+}
+
+.menu a{
+display:block;
+padding:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.menu a:hover{
+background:red;
+}
+
+.noidung{
+flex:1;
+background:#ccffff;
+padding:10px;
+}
+
+.tieude{
+display:flex;
+align-items:center;
+}
+
+h1{
+color:red;
+margin-left:20px;
+}

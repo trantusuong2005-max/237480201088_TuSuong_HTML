@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script>
+
+function ThayDoi()
+{
+var mauchu=
+document.getElementById("mauchu").value;
+
+var maunen=
+document.getElementById("maunen").value;
+
+var cochu=
+document.getElementById("cochu").value;
+
+var td=
+document.getElementById("tieude");
+
+td.style.color=mauchu;
+td.style.backgroundColor=maunen;
+td.style.fontSize=cochu+"px";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1 id="tieude">
+KHOA KỸ THUẬT VÀ CÔNG NGHỆ
+</h1>
+
+<p>
+Màu chữ:
+<input type="text" id="mauchu">
+</p>
+
+<p>
+Màu nền:
+<input type="text" id="maunen">
+</p>
+
+<p>
+Cỡ chữ:
+<input type="text" id="cochu">
+</p>
+
+<button onclick="ThayDoi()">
+Thay đổi
+</button>
+
+</body>
+</html>

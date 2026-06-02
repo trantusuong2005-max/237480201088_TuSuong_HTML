@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script>
+
+function TinhHP()
+{
+var cc=
+parseFloat(document.getElementById("cc").value);
+
+var gk=
+parseFloat(document.getElementById("gk").value);
+
+var ck=
+parseFloat(document.getElementById("ck").value);
+
+var hp=
+(cc*2+gk*2+ck*6)/10;
+
+document.getElementById("hp").value=
+hp.toFixed(2);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>TÍNH ĐIỂM HỌC PHẦN</h1>
+
+<p>
+Điểm CC:
+<input type="text" id="cc">
+</p>
+
+<p>
+Điểm GK:
+<input type="text" id="gk">
+</p>
+
+<p>
+Điểm CK:
+<input type="text" id="ck">
+</p>
+
+<p>
+Điểm HP:
+<input type="text" id="hp">
+</p>
+
+<button onclick="TinhHP()">
+Tính điểm HP
+</button>
+
+</body>
+</html>
