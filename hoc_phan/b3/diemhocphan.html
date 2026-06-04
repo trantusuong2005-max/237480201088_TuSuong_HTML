@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-
-<script>
-
-function TinhHP()
-{
-var cc=
-parseFloat(document.getElementById("cc").value);
-
-var gk=
-parseFloat(document.getElementById("gk").value);
-
-var ck=
-parseFloat(document.getElementById("ck").value);
-
-var hp=
-(cc*2+gk*2+ck*6)/10;
-
-document.getElementById("hp").value=
-hp.toFixed(2);
-}
-
-</script>
-
+<meta charset="utf-8">
 </head>
 
 <body>
 
 <h1>TÍNH ĐIỂM HỌC PHẦN</h1>
 
-<p>
-Điểm CC:
-<input type="text" id="cc">
-</p>
+Điểm CC
+<input id="cc">
 
-<p>
-Điểm GK:
-<input type="text" id="gk">
-</p>
+<br><br>
 
-<p>
-Điểm CK:
-<input type="text" id="ck">
-</p>
+Điểm GK
+<input id="gk">
 
-<p>
-Điểm HP:
-<input type="text" id="hp">
-</p>
+<br><br>
 
-<button onclick="TinhHP()">
+Điểm CK
+<input id="ck">
+
+<br><br>
+
+Điểm HP
+<input id="hp">
+
+<br><br>
+
+<button onclick="tinh()">
 Tính điểm HP
 </button>
+
+<script>
+
+function tinh()
+{
+let cc=parseFloat(document.getElementById("cc").value);
+
+let gk=parseFloat(document.getElementById("gk").value);
+
+let ck=parseFloat(document.getElementById("ck").value);
+
+let hp=(cc*2+gk*2+ck*6)/10;
+
+document.getElementById("hp").value=hp;
+}
+
+</script>
 
 </body>
 </html>
