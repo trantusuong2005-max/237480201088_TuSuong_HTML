@@ -1,31 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-
-<script>
-
-function ThayDoi()
-{
-var mauchu=
-document.getElementById("mauchu").value;
-
-var maunen=
-document.getElementById("maunen").value;
-
-var cochu=
-document.getElementById("cochu").value;
-
-var td=
-document.getElementById("tieude");
-
-td.style.color=mauchu;
-td.style.backgroundColor=maunen;
-td.style.fontSize=cochu+"px";
-}
-
-</script>
-
+<meta charset="utf-8">
+<title>Giao diện</title>
 </head>
 
 <body>
@@ -34,24 +11,40 @@ td.style.fontSize=cochu+"px";
 KHOA KỸ THUẬT VÀ CÔNG NGHỆ
 </h1>
 
-<p>
 Màu chữ:
 <input type="text" id="mauchu">
-</p>
 
-<p>
+<br><br>
+
 Màu nền:
 <input type="text" id="maunen">
-</p>
 
-<p>
+<br><br>
+
 Cỡ chữ:
 <input type="text" id="cochu">
-</p>
 
-<button onclick="ThayDoi()">
+<br><br>
+
+<button onclick="doi()">
 Thay đổi
 </button>
+
+<script>
+
+function doi()
+{
+document.getElementById("tieude").style.color=
+document.getElementById("mauchu").value;
+
+document.getElementById("tieude").style.background=
+document.getElementById("maunen").value;
+
+document.getElementById("tieude").style.fontSize=
+document.getElementById("cochu").value+"px";
+}
+
+</script>
 
 </body>
 </html>
